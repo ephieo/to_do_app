@@ -1,10 +1,8 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'pg'
+require_relative './../models/task'
 
-connection = PG.connect(dbname: 'todo_dev_db', user: 'ephieoyedoh')
-rows = connection.exec("select * from todo_list")
-
-get '/' do
-  rows.each { |row| puts row }
+get "/tasks" do
+  Task.all.to_json
 end

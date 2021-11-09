@@ -11,6 +11,7 @@ group :test do
   gem "rack-test"
 end
 
+gem "json"
 gem 'simplecov', require: false, group: :test
 
 group :development, :test do

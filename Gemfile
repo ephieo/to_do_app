@@ -7,6 +7,7 @@ gem 'sinatra-activerecord' # excellent gem that ports ActiveRecord for Sinatra
 gem 'rake'
 gem 'tux'
 gem 'shotgun'
+gem 'rack'
 
 group :test do
   gem "rspec"
@@ -25,3 +26,5 @@ end
 group :development, :test do
   gem 'rubocop', require: false
 end
+
+gem "puma", "~> 5.5"

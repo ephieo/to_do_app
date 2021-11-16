@@ -1,4 +1,4 @@
-<%# <style>
+<style>
 * {
     box-sizing: border-box;
     padding:0;
@@ -27,7 +27,8 @@ section {
 }
 </style>
 <body>
-<section id="greeting"> %>
-<h1>HOMEPAGE!</h1>
-<%# </section>
-</body> %>
+<section id="greeting">
+<%= yield %>
+<%# <h1>HOMEPAGE!</h1> %>
+</section>
+</body>

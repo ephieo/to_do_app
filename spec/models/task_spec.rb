@@ -6,7 +6,6 @@ SimpleCov.start
 
 require_relative './../../app/models/task'
 
-
 describe Task do
   it 'returns all tasks' do
     task = Task.create(task_name: 'go to shop', description: 'at Tesco', completed: true)

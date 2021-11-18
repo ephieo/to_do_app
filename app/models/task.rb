@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
   end
 
   def self.get_all_completed_tasks
-    Task.find_all_by(completed: true).to_json
+    Task.where(completed: true).to_json
   end
 
   def self.get_all_incomplete_tasks

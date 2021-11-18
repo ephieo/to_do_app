@@ -10,6 +10,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+    postgres:
+      image: postgres
+      env:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+      options: >-
+        --health-cmd pg_isready
+        --health-interval 10s
+        --health-timeout 5s
+        --health-retries 5
+      ports:
+        - 5432:5432
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
@@ -19,4 +33,9 @@ jobs:
       - name: Install dependencies
         run: bundle install
       - name: Run tests
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          RACK_ENV: test
         run: bundle exec rspec

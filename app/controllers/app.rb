@@ -14,9 +14,15 @@ class TodoApp < Sinatra::Base
   end
 
   get '/all-tasks' do
-    # @task = params[:status]
-    @tasks = Task.get_all_tasks
+    @tasks = JSON.parse(Task.get_all_tasks)
+    @tasks.each do |task|
+      puts task["task_name"]
+    end
     erb :'tasks/all_tasks', :layout => :'layouts/layout'
   end
-  run!
+  get '/demo' do
+    @tasks = Task.get_all_incomplete_tasks
+    erb :'tasks/all_tasks', :layout => :'layouts/layout'
+  end
+  run! if app_file == $0
 end

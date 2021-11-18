@@ -17,6 +17,7 @@ body {
 h1{
     background :transparent;
 }
+p{width:70vw;}
 section {
     background : #1d6076;
     width:80vw;
@@ -25,10 +26,16 @@ section {
     justify-content:center;
     align-items:center;
 }
+.task_box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:30vw;
+    height:30vh;
+}
 </style>
 <body>
 <section id="greeting">
-<%= yield %>
-<%# <h1>HOMEPAGE!</h1> %>
+<div class="task_box"><%= yield %></div>
 </section>
 </body>

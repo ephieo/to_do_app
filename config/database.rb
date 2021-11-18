@@ -1,4 +1,3 @@
-# require './../app/controllers/app'
 database_name = "todo_#{TodoApp.environment}_db"
 
 db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")

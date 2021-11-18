@@ -9,6 +9,10 @@ gem 'tux'
 gem 'shotgun'
 gem 'rack'
 
+group :development, :test do
+  gem "rerun"
+end
+
 group :test do
   gem "rspec"
   gem "rack-test"

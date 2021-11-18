@@ -2,7 +2,6 @@ require 'bundler'
 Bundler.require
 
 APP_ROOT = File.expand_path('..', __dir__)
-puts "************* #{APP_ROOT}************"
 
 Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| require file }
 

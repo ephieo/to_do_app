@@ -1,7 +1,8 @@
+ENV["RACK_ENV"] ||= "test"
+
 require 'simplecov'
 SimpleCov.start
 
-ENV["RACK_ENV"] ||= "test"
 
 require 'bundler'
 Bundler.require(:default, :test)
@@ -13,7 +14,8 @@ require 'database_cleaner/active_record'
 DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
-  
+  config.include Rack::Test::Methods
+
   config.before(:all) do
     DatabaseCleaner.clean
   end

@@ -11,4 +11,4 @@ class Task < ActiveRecord::Base
     Task.where(completed: false).to_json
   end
 end
-# ruby version was 2.6
+# ruby version was 2.6-

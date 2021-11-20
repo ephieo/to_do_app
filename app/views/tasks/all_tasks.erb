@@ -1,0 +1,21 @@
+<style>
+.task-div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    width:30vw;
+    height:20vh;
+    border: solid white 3px;
+    margin: 1rem;
+    
+}
+</style>
+
+<% @tasks.each do |task| %> 
+<div class="task-div">
+  <h2><%=task["task_name"]%></h2>
+  <p><%=task["description"]%></p>
+</div>
+<% end %>
+

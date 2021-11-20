@@ -1,0 +1,36 @@
+<style>
+* {
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    background :#0e2e39;
+    color:white;
+}
+body {
+    background :#0e2e39;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+h1{
+    background :transparent;
+}
+p {
+    width:80%;
+    text-align:center;
+}
+.task_box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    width:70vw;
+    height:70vh;
+    
+}
+</style>
+<body>
+<div class="task_box"><%= yield %></div>
+</body>

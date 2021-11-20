@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_11_08_231839) do
     t.string "task_name"
     t.text "description"
     t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at"
   end
 end

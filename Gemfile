@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'sinatra'
-gem 'sinatra-activerecord' # excellent gem that ports ActiveRecord for Sinatra
+gem 'sinatra-activerecord' 
 gem 'rake'
 gem 'tux'
 gem 'rack'

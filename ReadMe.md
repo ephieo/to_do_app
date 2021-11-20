@@ -15,6 +15,13 @@ This repo contains the server, database and the endpoints.
 - run `bundle exec rspec`
 - the test files are found in the `spec` folder.
 
+## Versions :
+
+- ruby 3.0.2p107
+- Bundler version 2.2.29
+- git version 2.33.1
+-
+
 ## Tech Stack :
 
 - Sinatra

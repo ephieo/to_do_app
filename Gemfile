@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
-gem 'pg'
 gem 'sinatra'
 gem 'sinatra-activerecord' # excellent gem that ports ActiveRecord for Sinatra
 gem 'rake'
 gem 'tux'
-gem 'shotgun'
 gem 'rack'
 
 group :development, :test do

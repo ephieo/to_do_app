@@ -26,4 +26,23 @@ describe Task do
 
     expect([task].to_json).to eq(result)
   end
+
+  it 'takes the id from params as an argument and saves a new task to the table' do 
+    params = {task_name: 'Go for a swim', description: 'In the River Thames', completed: true}
+    Task.create_task(params)
+
+    result = Task.get_all_tasks
+
+    expect(result).to include('Go for a swim')
+  end 
+
+  it 'returns an error when passed an empty hash' do 
+    params = {}
+    Task.create_task(params)
+    
+    result = Task.get_all_tasks
+
+    expect(result).to include('Go for a swim')
+  end 
+
 end

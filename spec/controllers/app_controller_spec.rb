@@ -41,4 +41,9 @@ describe TodoApp, :type => :controller do
       get '/incomplete'
       expect(last_response.body).to include('go to the cinema')
     end
+
+    it 'creates a new task' do
+      # result = {post '/all-tasks',task_name: 'Go for a swim', description: 'In the River Thames', completed: true}
+      # puts result 
+    end
 end

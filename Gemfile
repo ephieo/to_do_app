@@ -6,6 +6,7 @@ gem 'sinatra-activerecord'
 gem 'rake'
 gem 'tux'
 gem 'rack'
+gem 'pg'
 
 group :development, :test do
   gem "rerun"

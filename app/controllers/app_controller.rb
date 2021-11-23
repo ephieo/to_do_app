@@ -13,8 +13,14 @@ class TodoApp < Sinatra::Base
     erb :'home/index', :layout => :'layouts/layout'
   end
 
+  # get '/all-tasks/:id/:name' do 
+  #   puts params
+  # end
+
   get '/all-tasks' do
     @tasks = JSON.parse(Task.get_all_tasks)
+    puts @tasks
+    puts params
     erb :'tasks/all_tasks', :layout => :'layouts/layout'
   end
   get '/complete' do

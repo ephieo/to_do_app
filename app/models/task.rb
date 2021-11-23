@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  validates :task_name, presence: true
+
   def self.get_all_tasks
     Task.all.to_json
   end
@@ -17,7 +19,7 @@ class Task < ActiveRecord::Base
     if task.save 
       task.to_json
     else 
-      halt 422, task.errors.full_messages.to_json
+      task.errors.full_messages.to_json
     end
 
   end

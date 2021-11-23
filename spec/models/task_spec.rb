@@ -38,11 +38,10 @@ describe Task do
 
   it 'returns an error when passed an empty hash' do 
     params = {}
-    Task.create_task(params)
     
-    result = Task.get_all_tasks
+    result = Task.create_task(params)
 
-    expect(result).to include('Go for a swim')
+    expect(result).to include('Task name can\'t be blank')
   end 
 
 end

@@ -13,15 +13,13 @@ class Task < ActiveRecord::Base
     Task.where(completed: false).to_json
   end
 
-  def self.create_task(params) 
+  def self.create_task(params)
     task = Task.new(params)
 
-    if task.save 
+    if task.save
       task.to_json
-    else 
+    else
       task.errors.full_messages.to_json
     end
-
   end
-
 end

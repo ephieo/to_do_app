@@ -14,8 +14,10 @@ describe TodoApp, :type => :controller do
   end
 
   before do
-    incomplete_task = [{ "id" => 3, "task_name" => "go to the cinema","description" => "at odeon", "completed" => false, "created_at" => "2021-11-16T15:24:21.734Z" }].to_json
-    completed_task = [{ "id" => 4, "task_name" => "go for a walk","description" => "at greenwich park", "completed" => true, "created_at" => "2021-11-16T15:24:21.734Z" }].to_json
+    incomplete_task = [{ "id" => 3, "task_name" => "go to the cinema", "description" => "at odeon",
+                         "completed" => false, "created_at" => "2021-11-16T15:24:21.734Z" }].to_json
+    completed_task = [{ "id" => 4, "task_name" => "go for a walk", "description" => "at greenwich park",
+                        "completed" => true, "created_at" => "2021-11-16T15:24:21.734Z" }].to_json
     allow(Task).to receive(:get_all_tasks).and_return(completed_task)
     allow(Task).to receive(:get_all_incomplete_tasks).and_return(incomplete_task)
     allow(Task).to receive(:get_all_completed_tasks).and_return(completed_task)
@@ -23,27 +25,32 @@ describe TodoApp, :type => :controller do
 
   it 'says HOMEPAGE!' do
     get '/'
+
     expect(last_response.body).to include('HOMEPAGE')
   end
 
   it 'shows all tasks' do
     get '/all-tasks'
-    puts last_response.body
+
     expect(last_response.body).to include('at greenwich park')
   end
 
-    it 'shows all completed tasks' do
-      get '/complete'
-      expect(last_response.body).to include('at greenwich park')
-    end
+  it 'shows all completed tasks' do
+    get '/complete'
 
-    it 'shows all incomplete tasks' do
-      get '/incomplete'
-      expect(last_response.body).to include('go to the cinema')
-    end
+    expect(last_response.body).to include('at greenwich park')
+  end
 
-    it 'creates a new task' do
-      # result = {post '/all-tasks',task_name: 'Go for a swim', description: 'In the River Thames', completed: true}
-      # puts result 
-    end
+  it 'shows all incomplete tasks' do
+    get '/incomplete'
+
+    expect(last_response.body).to include('go to the cinema')
+  end
+
+  it 'creates a new task' do
+    params_hash = { task_name: 'Go for a swim', description: 'In the River Thames', completed: true }
+    post '/create-task', params = params_hash
+
+    expect(last_response.body).to include('Go for a swim')
+  end
 end

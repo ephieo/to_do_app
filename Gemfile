@@ -2,10 +2,13 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'sinatra'
-gem 'sinatra-activerecord' 
+gem 'sinatra-activerecord'
+gem "sinatra-cross_origin", "~> 0.3.1"
+gem "sinatra-cors"
 gem 'rake'
 gem 'tux'
 gem 'rack'
+gem 'pg'
 
 group :development, :test do
   gem "rerun"

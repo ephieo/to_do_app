@@ -23,10 +23,10 @@ describe TodoApp, :type => :controller do
     allow(Task).to receive(:get_all_completed_tasks).and_return(completed_task)
   end
 
-  it 'says HOMEPAGE!' do
+  it 'says home' do
     get '/'
 
-    expect(last_response.body).to include('HOMEPAGE')
+    expect(last_response.body).to include('home')
   end
 
   it 'shows all tasks' do
@@ -36,20 +36,20 @@ describe TodoApp, :type => :controller do
   end
 
   it 'shows all completed tasks' do
-    get '/complete'
+    get '/complete-tasks'
 
     expect(last_response.body).to include('at greenwich park')
   end
 
   it 'shows all incomplete tasks' do
-    get '/incomplete'
+    get '/incomplete-tasks'
 
     expect(last_response.body).to include('go to the cinema')
   end
 
   it 'creates a new task' do
     params_hash = { task_name: 'Go for a swim', description: 'In the River Thames', completed: true }
-    post '/create-task', params = params_hash
+    post '/create-tasks', params = params_hash
 
     expect(last_response.body).to include('Go for a swim')
   end
